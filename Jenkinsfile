@@ -1,7 +1,12 @@
-pipelin{
+pipeline{
   agent any
-  stages { stage ('Build')
+  stages { 
+    stage ('Build') {
+      steps { 
+        sh 'make' 
+        archiveArtifacts artifacts:'', fingerprint:true
             
+      }
+    }
   }
- 
 }
