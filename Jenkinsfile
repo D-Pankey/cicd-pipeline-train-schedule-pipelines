@@ -3,8 +3,8 @@ pipeline{
   stages { 
     stage ('Build') {
       steps { 
-        sh 'make' 
-        archiveArtifacts artifacts:'', fingerprint:true
+        sh './gradlew build--no-daemon' 
+        archiveArtifacts artifacts:'dist/trainSchedule.zip'
             
       }
     }
